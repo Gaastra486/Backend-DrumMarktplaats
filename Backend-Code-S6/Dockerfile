@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Backend-Code-S6.csproj", "."]
-RUN dotnet restore "./Backend-Code-S6.csproj"
+COPY ["Backend-Code-S6/Backend-Code-S6.csproj", "Backend-Code-S6/"]
+RUN dotnet restore "Backend-Code-S6/Backend-Code-S6.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/Backend-Code-S6"
 RUN dotnet build "Backend-Code-S6.csproj" -c Release -o /app/build
 
 FROM build AS publish

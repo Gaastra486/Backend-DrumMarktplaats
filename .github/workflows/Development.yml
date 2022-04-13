@@ -28,9 +28,9 @@ jobs:
        # with:
        #   dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
-        run: dotnet restore './Backend-Code-S6/Backend-Code-S6.sln'
+        run: dotnet restore './Backend/Backend-Code-S6.sln'
       - name: Build
-        run: dotnet build --configuration Release --no-restore './Backend-Code-S6/Backend-Code-S6.sln'
+        run: dotnet build --configuration Release --no-restore './Backend/Backend-Code-S6.sln'
         
   test:
     needs:
@@ -48,7 +48,7 @@ jobs:
        # with:
         #  dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
-        run: dotnet restore "./Backend-Code-S6/Backend-Code-S6.sln"
+        run: dotnet restore "./Backend/Backend-Code-S6.sln"
       - name: Test
-        run: dotnet test --no-restore './Backend-Code-S6/Backend-Code-S6.sln' #--verbosity normal
+        run: dotnet test --no-restore './Backend/Backend-Code-S6.sln' #--verbosity normal
     

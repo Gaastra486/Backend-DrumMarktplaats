@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend-Code-S6", "Backend-Code-S6\Backend-Code-S6.csproj", "{F9738546-C8C7-420E-9FB4-578D61CB0FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "Backend-Code-S6\APIGateway.csproj", "{F9738546-C8C7-420E-9FB4-578D61CB0FA4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{F43B5ED5-9C8E-4472-A288-592F231724DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountService", "AccountService\AccountService.csproj", "{1F9479BD-D9FF-466A-AC99-D7078A27A316}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountService.Microservice", "AccountService\AccountService.Microservice.csproj", "{1F9479BD-D9FF-466A-AC99-D7078A27A316}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

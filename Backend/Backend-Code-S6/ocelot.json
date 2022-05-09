@@ -1,0 +1,31 @@
+﻿
+  {
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/user/all",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5065
+          }
+        ],
+        "UpstreamPathTemplate": "/users",
+        "UpstreamHttpMethod": [ "POST", "GET" ],
+        "SwaggerKey": "AccountService"
+      }
+    ],
+    "SwaggerEndPoints": [
+      {
+        "Key": "AccountService",
+        "Config": [
+          {
+            "Name": "AccountService API",
+            "Version": "v1",
+            "Url": "https://localhost:5065/swagger/v1/swagger.json"
+          }
+        ]
+      }
+    ],
+    "GlobalConfiguration": {}
+  }

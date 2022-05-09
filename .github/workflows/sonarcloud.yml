@@ -2,7 +2,8 @@ name: SonarCloud
 on:
   push:
     branches:
-      - CI/CD
+      - Development
+      - AccountMicroservice
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:

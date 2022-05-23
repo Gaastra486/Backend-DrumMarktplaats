@@ -29,7 +29,6 @@ namespace AccountService.Microservice.Data
                     {
                         Username = "Chaim",
                         Password = "1234",
-                        Id = 1,
                         Email = "c@gmail.com",
                         Postalcode = "5398BL"
                     }

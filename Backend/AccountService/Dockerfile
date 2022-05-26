@@ -10,7 +10,7 @@ WORKDIR /src
 COPY ["Backend/AccountService/AccountService.Microservice.csproj", "AccountService/"]
 RUN dotnet restore "AccountService/AccountService.Microservice.csproj"
 COPY . .
-#WORKDIR "/src/AccountService"
+WORKDIR "/src/AccountService"
 COPY Backend/AccountService ./AccountService
 RUN dotnet build "AccountService.Microservice.csproj" -c Release -o /app/build
 

@@ -9,7 +9,7 @@ on:
     branches: [main]
     
 #Allows you to run this workflow manually from the actions tab
-workflow_dispatch:
+  workflow_dispatch:
 
 env:
   PATH_TO_SLN: './Backend/AccountService/AccountService.Microservice.csproj'

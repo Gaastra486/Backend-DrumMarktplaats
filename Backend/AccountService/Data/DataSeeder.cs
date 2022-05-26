@@ -1,5 +1,6 @@
 ﻿using AccountService.Microservice.Context;
 using AccountService.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AccountService.Microservice.Data
 {
@@ -21,6 +22,16 @@ namespace AccountService.Microservice.Data
         }
         public static void SeedData(UserDbContext userDbContext)
         {
+            Console.WriteLine("--> Attempting to apply migrations...");
+            try
+            {
+               userDbContext.Database.Migrate();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"--> Could not run migrations: {ex.Message}");
+            }
+            
             if (!userDbContext.User.Any())
             {
                 var user = new List<UserModel>()

@@ -32,5 +32,5 @@ jobs:
         password: ${{ secrets.DOCKER_ACCTOKEN }}
     - name: tag image
       run: docker tag $DOCKER_IMAGE_NAME $DOCKER_REPO_NAME
-    -name: push image
-     run: docker push $DOCKER_REPO:latest
+    - name: push image
+      run: docker push $DOCKER_REPO:latest

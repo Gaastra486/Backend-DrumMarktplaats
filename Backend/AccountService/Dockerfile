@@ -12,6 +12,7 @@ RUN dotnet restore "AccountService/AccountService.Microservice.csproj"
 COPY . .
 WORKDIR "/src/AccountService"
 COPY Backend/AccountService ./AccountService
+COPY appsettings.json
 RUN dotnet build "AccountService.Microservice.csproj" -c Release -o /app/build
 
 FROM build AS publish

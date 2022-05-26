@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccountService", "AccountSe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderService", "{3E7FF21A-6473-4F5B-93E8-890908EC7981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Microservice", "OrderService.Microservice\OrderService.Microservice.csproj", "{D0C864DD-34D4-43F3-9283-40A7E5FA0B3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.Microservice", "OrderService.Microservice\OrderService.Microservice.csproj", "{D0C864DD-34D4-43F3-9283-40A7E5FA0B3A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "ClassLibrary\SharedLibrary.csproj", "{612D5312-24B1-429D-9C59-2E937A31402F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationBidSender", "WebApplicationBidSender\WebApplicationBidSender.csproj", "{54E117D2-2A73-4015-80A9-91DDDBB5D0C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationBidSender", "WebApplicationBidSender\WebApplicationBidSender.csproj", "{54E117D2-2A73-4015-80A9-91DDDBB5D0C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService.Microservice.Test", "OrderService.Microservice.Test\OrderService.Microservice.Test.csproj", "{D0D15CE0-DFCE-49F7-B4AE-F34D1086074E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{54E117D2-2A73-4015-80A9-91DDDBB5D0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E117D2-2A73-4015-80A9-91DDDBB5D0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E117D2-2A73-4015-80A9-91DDDBB5D0C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D15CE0-DFCE-49F7-B4AE-F34D1086074E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D15CE0-DFCE-49F7-B4AE-F34D1086074E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D15CE0-DFCE-49F7-B4AE-F34D1086074E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D15CE0-DFCE-49F7-B4AE-F34D1086074E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{D0C864DD-34D4-43F3-9283-40A7E5FA0B3A} = {3E7FF21A-6473-4F5B-93E8-890908EC7981}
 		{612D5312-24B1-429D-9C59-2E937A31402F} = {3E7FF21A-6473-4F5B-93E8-890908EC7981}
 		{54E117D2-2A73-4015-80A9-91DDDBB5D0C9} = {3E7FF21A-6473-4F5B-93E8-890908EC7981}
+		{D0D15CE0-DFCE-49F7-B4AE-F34D1086074E} = {3E7FF21A-6473-4F5B-93E8-890908EC7981}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {438717B0-27A0-4178-ACC4-8D2535DADDEA}

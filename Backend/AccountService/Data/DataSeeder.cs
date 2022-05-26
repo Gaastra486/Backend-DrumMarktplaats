@@ -5,9 +5,9 @@ namespace AccountService.Microservice.Data
 {
     public static class DataSeeder
     {
-        //private readonly UserDbContext _userDbContext;
+        /*private readonly UserDbContext _userDbContext;
 
-      /*  public DataSeeder(UserDbContext userDbContext)
+        public DataSeeder(UserDbContext userDbContext)
         {
             this._userDbContext = userDbContext;
         }*/

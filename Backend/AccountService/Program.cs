@@ -12,7 +12,6 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppDb");
 
 //Configure Services
-//builder.Services.AddTransient<DataSeeder>();
 builder.Services.AddScoped<IUserDAL, UserDAL>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<UserDbContext>(x => x.UseSqlServer(connectionString));
@@ -25,22 +24,12 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
-DataSeeder.PrepPopulation(app);
+
+
 //Configure
+if (args.Length == 1 && args[0].ToLower() == "seeddata")
+    DataSeeder.PrepPopulation(app);
 
-/*if (args.Length == 1 && args[0].ToLower() == "seeddata")
-    SeedData(app);*/
-
-/*void SeedData(IHost app)
-{
-    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
-
-    using (var scope = scopedFactory.CreateScope())
-    {
-        var service = scope.ServiceProvider.GetService<DataSeeder>();
-        service.Seed();
-    }
-}*/
 
 if (app.Environment.IsDevelopment())
 {
@@ -84,4 +73,4 @@ app.MapPost("/user/add", ([FromServices] IUserDAL db, [FromServices] IMapper map
 
 app.Run();
 
-public partial class Program { }
+public partial class UserProgram { }

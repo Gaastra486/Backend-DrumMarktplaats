@@ -9,9 +9,9 @@ using AccountService.Models;
 
 namespace AccountService.Microservice.Test
 {
-    public class UserApiTests : WebApplicationFactory<Program>
+    public class UserApiTests : WebApplicationFactory<UserProgram>
     {
-        UserDALStub stub = new UserDALStub();
+        UserDALStub stub = new();
         protected override IHost CreateHost(IHostBuilder builder)
         {
             builder.ConfigureServices(services =>

@@ -8,11 +8,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Backend/AccountService/AccountService.Microservice.csproj", "AccountService/"]
+COPY ["Backend/AccountService/appsettings.json", "AccountService/"]
 RUN dotnet restore "AccountService/AccountService.Microservice.csproj"
 COPY . .
 WORKDIR "/src/AccountService"
 COPY Backend/AccountService ./AccountService
-COPY Backend/AccountService/appsettings.json ./AccountService
 RUN dotnet build "AccountService.Microservice.csproj" -c Release -o /app/build
 
 FROM build AS publish

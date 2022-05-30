@@ -42,5 +42,11 @@ namespace AccountService.Microservice.Data
             db.SaveChanges();
             return new OkResult();
         }
+
+        public UserModel GetUserByUsername(string username)
+        {
+            return db.User.Where(x => x.Username == username).FirstOrDefault();
+            
+        }
     }
 }

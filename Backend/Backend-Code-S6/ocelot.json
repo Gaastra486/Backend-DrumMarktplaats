@@ -12,12 +12,12 @@
         ],
         "UpstreamPathTemplate": "/users",
         "UpstreamHttpMethod": [ "POST", "GET" ],
-        "SwaggerKey": "AccountService"
+        "SwaggerKey": "AccountService.Microservice"
       }
     ],
     "SwaggerEndPoints": [
       {
-        "Key": "AccountService",
+        "Key": "AccountService.Microservice",
         "Config": [
           {
             "Name": "AccountService API",

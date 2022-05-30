@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
 using AccountService.Microservice.DTOs;
+using AccountService.Microservice;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,18 +40,24 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.MapGet("/user/login/{id}", ([FromServices] IUserDAL db, [FromServices] IMapper mapper,  int id) =>
+app.MapGet("/user/login/", ([FromServices] IUserDAL db, [FromServices] IMapper mapper,  string username, string password) =>
 {
-    var userItem = db.GetUserById(id);
-
-    return mapper.Map<UserReadDTO>(userItem);
+    //var userItem = db.GetUserById(id);
+    var userItem = db.GetUserByUsername(username);
+    UserReadDTO user = mapper.Map<UserReadDTO>(userItem);
+    if (user.Password == SecureString.ComputeStringToSha256Hash(password))
+    {
+        return user;
+    }
+    else
+    {
+        return null;
+    }
 });
 
 app.MapDelete("/user/delete/{id}", ([FromServices] IUserDAL db, [FromServices] IMapper mapper, int id) =>
 {
     var userItem = db.DeleteUserById(id);
-
-    mapper.Map<UserReadDTO>(userItem);
 });
 
 app.MapGet("/user/all", ([FromServices] IUserDAL db, [FromServices] IMapper mapper) =>
@@ -68,8 +75,12 @@ app.MapPut("/user/update/{id}", ([FromServices] IUserDAL db, [FromServices] IMap
 
 app.MapPost("/user/add", ([FromServices] IUserDAL db, [FromServices] IMapper mapper, UserCreateDTO user) =>
 {
+    user.Password = SecureString.ComputeStringToSha256Hash(user.Password);
+    Console.WriteLine(user.Password);
     db.AddUser(mapper.Map<UserModel>(user));
 });
+
+
 
 app.Run();
 

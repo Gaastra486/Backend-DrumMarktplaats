@@ -10,5 +10,6 @@ namespace AccountService.Microservice.Data
         UserModel UpdateUser(UserModel user);
         UserModel GetUserById(int id);
         public ActionResult DeleteUserById(int id);
+        UserModel GetUserByUsername(string username);
     }
 }

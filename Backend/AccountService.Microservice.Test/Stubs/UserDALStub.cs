@@ -67,6 +67,10 @@ namespace AccountService.Microservice.Test.Stubs
                 return new NotFoundResult();
             }
         }
+        public UserModel GetUserByUsername(string username)
+        {
+            return new UserModel();
+        }
     }
 
 }

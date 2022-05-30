@@ -76,7 +76,7 @@ app.MapPut("/user/update/{id}", ([FromServices] IUserDAL db, [FromServices] IMap
 app.MapPost("/user/add", ([FromServices] IUserDAL db, [FromServices] IMapper mapper, UserCreateDTO user) =>
 {
     user.Password = SecureString.ComputeStringToSha256Hash(user.Password);
-    Console.WriteLine(user.Password);
+
     db.AddUser(mapper.Map<UserModel>(user));
 });
 

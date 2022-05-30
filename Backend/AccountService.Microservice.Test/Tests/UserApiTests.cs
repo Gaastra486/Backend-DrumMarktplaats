@@ -6,6 +6,7 @@ using AccountService.Microservice.Test.Stubs;
 using AccountService.Microservice.Data;
 using Xunit;
 using AccountService.Models;
+using AccountService.Microservice.DTOs;
 
 namespace AccountService.Microservice.Test
 {
@@ -40,17 +41,16 @@ namespace AccountService.Microservice.Test
         public async void AddCertainUser_Passed()
         {
             // Arrange
-            UserModel userModel = new UserModel();
+            UserCreateDTO userModel = new UserCreateDTO();
             userModel.Username = "mark";
             userModel.Password = "mark123";
-            userModel.Id = 11;
             userModel.Email = "mark@gmail.com";
             userModel.Postalcode = "2352GL";
             var webAppFactory = new UserApiTests();
             HttpClient httpClient = webAppFactory.CreateClient();
             stub.testValue = true;
 
-            string json = "{ }";
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(userModel);
 
             StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 

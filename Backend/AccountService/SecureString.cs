@@ -7,6 +7,7 @@ namespace AccountService.Microservice
     {
         public static string ComputeStringToSha256Hash(string text)
         {
+           
             // Create a SHA256 hash from string
             using (SHA256 sha256Hash = SHA256.Create())
             {
